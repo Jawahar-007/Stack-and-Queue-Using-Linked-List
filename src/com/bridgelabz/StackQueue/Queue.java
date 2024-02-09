@@ -17,6 +17,14 @@ class Queue<W> {
             { rear.next = newNode; rear = newNode;}
     }
 
+    public W dequeue(){
+        if(isEmpty())
+            throw new IllegalStateException("Empty Stack");
+        W data = front.data;
+        front = front.next;
+        return data;
+    }
+
     public void displayElement(){
         MyNode<W> node = front;
         while(node != null){

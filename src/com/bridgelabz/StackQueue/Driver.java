@@ -22,5 +22,10 @@ public class Driver{
         integerQueue.enqueue(89);
         System.out.println("Queue Display :");
         integerQueue.displayElement();
+
+        while(integerQueue.front!= null && integerQueue.rear!=null){
+            System.out.println("Dequeue : "+integerQueue.dequeue());
+            integerQueue.displayElement();
+        }
     }
 }
