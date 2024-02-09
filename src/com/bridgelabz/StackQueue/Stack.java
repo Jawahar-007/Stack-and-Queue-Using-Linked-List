@@ -6,15 +6,33 @@ class Stack<W> {
     public Stack() {
         this.top = null;
     }
+    boolean isEmpty(){
+        return top == null;
+    }
 
     public void pushElement(W value) {
         MyNode<W> newNode = new MyNode<>(value);
-        if (top == null)
+        if (isEmpty())
             top = newNode;
         else {
             newNode.next = top;
             top = newNode;
         }
+    }
+
+    public W peek(){
+        if(isEmpty())
+            throw new IllegalStateException("Empty Stack");
+
+        return top.data;
+    }
+    public W popElement(){
+        if(top == null){
+            throw new IllegalStateException("Empty Stack");
+        }
+        W data = top.data;
+        top = top.next;
+        return data;
     }
 
     public void displayElements(){

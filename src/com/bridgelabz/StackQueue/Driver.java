@@ -9,5 +9,11 @@ package com.bridgelabz.StackQueue;
         integerList.pushElement(42);
         integerList.pushElement(54);
         integerList.displayElements();
+
+        while(integerList.top!= null){
+            System.out.println("Peek : "+integerList.peek());
+            System.out.println("pop: "+integerList.popElement());
+            integerList.displayElements();
+        }
     }
 }
